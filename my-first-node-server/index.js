@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import userRoutes from './routes/userRoutes.js';
-import platRoute from './routes/platRoute.js';
+import formationsRoute from './routes/formationRoute.js';
 import ingredientRoute from './routes/ingredientRoute.js';
 import authRoute from './routes/authRoute.js';
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use('/', userRoutes);
-app.use('/', platRoute);
+app.use('/', formationsRoute);
 app.use('/', ingredientRoute);
 app.use('/', authRoute);
 

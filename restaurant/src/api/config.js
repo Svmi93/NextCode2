@@ -39,9 +39,9 @@ export const authAPI = {
 };
 
 export const formationsAPI = {
-  getAllFormations: () => api.get("/plats"),
-  getFormation: (id) => api.get(`/plats/${id}`),
-  createFormation: (plat) => api.post("/plats", plat),
-  updateFormation: (id, plat) => api.put(`/plats/${id}`, plat),
-  deleteFormation: (id) => api.delete(`/plats/${id}`),
+  getAllFormations: () => api.get("/formations"),
+  getFormation: (id) => api.get(`/formations/${id}`),
+  createFormation: (plat) => api.post("/formations", plat),
+  updateFormation: (id, plat) => api.put(`/formations/${id}`, plat),
+  deleteFormation: (id) => api.delete(`/formations/${id}`),
 };
