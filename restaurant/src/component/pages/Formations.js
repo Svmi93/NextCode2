@@ -131,7 +131,7 @@ function AddFormation() {
         </div>
 
         {/* Nouveau champ pour un fichier texte */}
-        <div className="input-group">
+        {/* <div className="input-group">
           <label>Cours sous format texte</label>
           <input
             type="file"
@@ -139,7 +139,7 @@ function AddFormation() {
             accept=".txt"
             onChange={handleChange}
           />
-        </div>
+        </div> */}
 
         <button type="submit" className="btn" disabled={loading}>
           {loading ? "Ajout en cours..." : "Ajouter la formation"}

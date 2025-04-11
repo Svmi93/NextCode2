@@ -21,15 +21,12 @@ body {
   color: #2b2b2b;
 }
 
-/* Variable */
-
 :root {
   --primary: #0d0d0d;
   --secondary: #1d1d1d;
   --emerald: #2ecc71;
 }
 
-/* Reset */
 body {
   background: var(--primary);
   color: #fff;
@@ -54,8 +51,6 @@ h2 {
   font-weight: 400;
 }
 
-/* Class */
-
 .btn {
   background: var(--emerald);
   border-radius: 50px;
@@ -69,8 +64,6 @@ h2 {
 .btn:hover {
   color: #fff;
 }
-
-/* Header */
 
 nav {
   display: flex;
@@ -88,10 +81,8 @@ nav {
   color: gold;
 }
 
-/* 🎯 HEADER */
 header {
   width: 100%;
-
   color: white;
   text-align: center;
   padding: 100px 20px;
@@ -99,6 +90,8 @@ header {
   align-items: center;
   justify-content: center;
   height: 300px;
+  position: relative;
+  z-index: 0;
 }
 
 header::before {
@@ -108,6 +101,8 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
+  background: transparent;
 }
 
 header h1 {
@@ -117,7 +112,6 @@ header h1 {
   color: var(--emerald);
 }
 
-/* 🍕 SECTION GRID DES IMAGES */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -140,7 +134,6 @@ header h1 {
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* 📌 FOOTER */
 footer {
   background: #116530;
   color: white;
@@ -150,7 +143,6 @@ footer {
   font-size: 1em;
 }
 
-/* 📌 LESSON PRINCIPAL */
 .lesson {
   display: flex;
   justify-content: center;
@@ -166,15 +158,15 @@ footer {
 
 .lesson-grid {
   display: flex;
-  flex-wrap: wrap; /* Permet de faire plusieurs lignes */
-  justify-content: center; /* Centre les formations */
-  gap: 20px; /* Espacement entre les formations */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
-/* 📌 ITEMS DU LESSON */
+
 .lesson-item {
-  width: calc(25% - 20px); /* 25% pour avoir 4 formations par ligne */
-  min-width: 250px; /* Taille minimale */
+  width: calc(25% - 20px);
+  min-width: 250px;
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -198,7 +190,6 @@ footer {
   margin-top: 10px;
 }
 
-/* 📌 SECTION À PROPOS */
 .about {
   max-width: 1200px;
   margin: 50px auto;
@@ -222,7 +213,6 @@ footer {
   line-height: 1.6;
 }
 
-/* 📌 INFOS RESTAURANT */
 .about-info {
   display: flex;
   justify-content: space-around;
@@ -250,7 +240,6 @@ footer {
   font-size: 1.1em;
 }
 
-/* 🌟 SECTION ACCUEIL STYLISÉE */
 .welcome {
   max-width: 1000px;
   margin: 50px auto;
@@ -276,7 +265,6 @@ footer {
   line-height: 1.6;
 }
 
-/* 🌟 ANIMATION D’APPARITION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -285,5 +273,188 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 50px 20px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .lesson-grid {
+    gap: 15px;
+  }
+
+  .lesson-item {
+    width: calc(50% - 15px);
+  }
+
+  .about-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-item {
+    min-width: 100%;
+  }
+
+  .welcome h2 {
+    font-size: 2em;
+  }
+
+  .welcome p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 150px;
+    padding: 30px 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .lesson {
+    padding: 20px 10px;
+  }
+
+  .lesson-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about {
+    padding: 20px 10px;
+  }
+
+  .about h2 {
+    font-size: 1.8em;
+  }
+
+  .about p {
+    font-size: 0.9em;
+  }
+
+  .welcome {
+    padding: 20px 10px;
+  }
+
+  .welcome h2 {
+    font-size: 1.8em;
+  }
+
+  .welcome p {
+    font-size: 0.9em;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+}
+
+/* La NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: var(--emerald);
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navLink {
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--emerald);
+}
+
+.btn {
+  background: var(--emerald);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: white;
+}
+
+/* Menu Burger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .navigation.active {
+    height: 200px;
+  }
+
+  .navigation li {
+    margin: 1rem 0;
   }
 }

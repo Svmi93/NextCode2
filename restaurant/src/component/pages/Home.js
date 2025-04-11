@@ -92,6 +92,7 @@ import { useAuth } from "../../hooks/useAuth";
 import "./Home.css";
 import useFormations from "../../hooks/useFormations";
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 function Home() {
   const { user } = useAuth();
@@ -161,6 +162,8 @@ function Home() {
                   <p>
                     <strong>Prix :</strong> {formation.prix} €
                   </p>
+                  <Link to={`/paiement/${formation.id_formation}`}>
+                  <button className="btn">Acheter</button></Link>
                 </div>
               ))
             ) : (
